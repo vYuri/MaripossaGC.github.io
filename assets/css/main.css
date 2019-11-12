@@ -1,0 +1,27 @@
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+/* Other Classes */
+
+body {
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
+h1.ine {
+    margin-top: 3rem!important;
+    font-family: Arial Black, Gadget, sans-serif;
+    font-weight: normal;
+	color: white;
+}
+
