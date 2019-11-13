@@ -1,0 +1,17 @@
+﻿tr:nth-child(even){
+	background-color:#eceaea
+}
+thead{
+	background-color:#f0f0f0
+}
+tbody.counted-rows{
+	counter-reset:rowNumber
+}
+tbody.counted-rows tr{
+	counter-increment:rowNumber
+}
+tbody.counted-rows tr td:first-child::before{
+	content:counter(rowNumber);
+	min-width:1em;
+	margin-right:0.5em
+}
