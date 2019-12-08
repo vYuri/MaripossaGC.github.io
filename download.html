@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>GitZip Test</title>
+
+  <!-- Page stylesheets -->
+  <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/css/main.css" rel="stylesheet">
+  <link href="/assets/css/rp.css" rel="stylesheet">
+
+  <!-- Scripts -->
+  <script src="/assets/js/lib/gitzip-api.js"></script>
+  <script src="/assets/js/lib/jzip.min.js"></script>
+  <script src="/assets/js/lib/file-saver.min.js"></script>
+  <script src="/assets/js/lib/file-reader.js"></script>
+  
+</head>
+
+<body id="page-top">
+  
+<section>
+    <div class="container">
+	<div class="col-lg-12 order-lg-1 order-2 dynamic list">
+	
+			<div class="col img-infy rp-infy center">
+				<div class="rp-infy-selector">
+					<div class="rp-infy-header">
+						<img class="image lazy loaded" src="https://raw.githubusercontent.com/MaripossaGC/rp-public/master/Bibitor%20(Fullbright)/pack.png">
+						<div class="banner" data-toggle="tooltip" data-placement="top" title="">
+							<div class="title">
+								<a>Bibiltor Fullbright</a>
+							</div>
+                        <div class="sub-title">
+                            <li class="ver-tag rp-tag s-tag">KaskitoGarcia</li>
+                        </div>
+						</div>
+							<div class="labels">
+								<a href="?f=1.7" class="badge badge-ver" data-toggle="tooltip" data-placement="top" title="">1.7 - 1.8</a>
+							</div>
+					</div>
+					<div class="rp-infy-body">
+						<div class="buttons">
+							<span class="btn rp-link rp-button" role="button" data-toggle="modal"><i class="fa fa-download"></i></span>
+							<a href="https://github.com/MaripossaGC/rp-public/tree/master/Bibitor%20(Fullbright)" target="_blank" class="btn rp-link rp-button" role="button"><i class="fab fa-github"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+	</div>
+</div>
+		
+    </div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script>
+    readFile("assets/resources.json", function (text) {
+        const cardsRow = document.getElementById('cardsRow');
+        const packs = JSON.parse(text);
+        for (let i = 0; i < packs.length; i++) {
+            const pack = packs[i];
+
+            const col = document.createElement('div');
+            col.classList.add('col-md-4');
+
+            const cardContainer = document.createElement('div');
+            cardContainer.classList.add("card-content");
+
+            const imgDiv = document.createElement("div");
+            imgDiv.classList.add("card-img");
+
+            const img = document.createElement("img");
+            img.setAttribute("src", pack.img);
+
+            const span = document.createElement("span");
+
+            const h4 = document.createElement("h4");
+            document.createTextNode(pack.version);
+
+            span.appendChild(h4);
+
+            imgDiv.appendChild(img);
+            imgDiv.appendChild(h4);
+
+            const cardDesc = document.createElement("div");
+            cardDesc.classList.add("card-desc");
+
+            const h3 = document.createElement("h3");
+
+            const title = document.createTextNode(pack.name);
+
+            h3.appendChild(title);
+
+            const p = document.createElement("p");
+
+            const description = document.createTextNode(pack.description)
+
+            p.appendChild(description)
+
+            cardDesc.appendChild(h3);
+            cardDesc.appendChild(p);
+
+            cardContainer.appendChild(imgDiv);
+            cardContainer.appendChild(cardDesc);
+            col.appendChild(cardContainer)
+            cardsRow.appendChild(col)
+
+        }
+    })
+</script>
+</body>
+</html>
